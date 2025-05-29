@@ -1,0 +1,335 @@
+body{
+width: auto;
+height: auto;
+background-color: whitesmoke;
+}
+
+header{
+justify-self: center;
+position: relative;
+width: 1593px;
+height: 150px;
+margin: none;
+background-color: lightgray;
+}
+
+.Navegate{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.Navegate ul{
+    padding-top: 40px;
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 50px;
+}
+
+.Navegate li a{
+    margin: 30px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    text-decoration: none;  
+}
+
+#icon{
+  position: absolute;
+  top: 0;         
+  left: 50px;      
+  width: 130px;
+  height: 150px;
+}
+
+.btn{
+    display: flex;
+    width: 1500px;
+    height: 100px;
+    margin-left: 350px;
+    margin-top: -50px;
+}
+
+.donate{
+    justify-self: center;
+    width: 200px;
+    height: 55px;
+    font-size: x-large;
+    margin-left: 55px;
+    margin-top: 100px;
+    border-radius: 20px;
+    background-color:#278F3A; 
+    color: whitesmoke;
+    border-width: 3.5px;
+}
+
+.recieve{
+    width: 200px;
+    height:55px;
+    font-size: x-large;
+    margin-left: 200px;
+    margin-top: 100px;
+    border-radius: 20px;
+    background-color:#278F3A; 
+    color: whitesmoke;
+    border-width: 3.5px;
+}
+
+.search{
+    margin-right: 30px;
+    justify-self: flex-end;
+    margin-top: -85px;
+}
+
+.cadlog{
+    font-size: x-large;
+    position: absolute;
+    margin-left: 1320px;
+    margin-top: -790px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.login{
+    text-decoration: none;
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.sign{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.divider{
+    width: 2px;
+    height: 20px;
+    background: #333;
+}
+
+.carousel-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 125px
+}
+
+.carousel-container {
+    overflow: hidden;
+    border-radius: 8px; 
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform; 
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.carousel-item {
+    min-width: 100%;
+    width: 100%;
+    flex-shrink: 0; 
+    box-sizing: border-box; 
+    background-color: white; 
+    margin: 0;
+}
+
+.carousel-control {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+
+.carousel-wrapper {
+    padding-bottom: 30px; 
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px; 
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 0;
+    padding: 0; 
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0; 
+}
+
+.indicator.active {
+    background-color: #278F3A; 
+    transform: none; 
+    border: none; 
+}
+
+.img4{
+    flex: 0 0 auto;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.search input {
+    border: none;
+    border-bottom: 2px solid #278F3A;
+    border-radius: 0;
+    background: transparent;
+    padding: 10px 5px;
+    font-size: large;
+}
+
+.img1{
+    width: 250px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 250px;
+    border-radius: 20px;
+}
+
+.donate-items{
+    margin-top: 100px;
+    display: flex;
+    justify-self: center;
+    margin-left: 250px;
+}
+
+.donate-items h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.donate-items p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact1{
+    width: 400px;
+    height: 480px;
+    margin: 100px;
+    background-color: #00000023;
+    border-radius: 20px;
+    margin-left: 200px;
+}
+
+.contact1 h1{
+    font-size: xx-large;
+    padding: 20px;
+
+}
+
+.contact1 h2{
+    font-size: x-large;
+    margin-left: 25px;
+    padding: 5px;
+}
+
+.contact1 input{
+    margin-left: 30px;
+    width: 325px;
+    height: 20px;
+}
+
+#subject{
+    height: 150px;
+    resize: vertical;
+}
+
+.send{
+    width: 100px;
+    height: 45px;
+    font-size: larger;
+    margin-left: 145px;
+    margin-top: 25px;
+    border-radius: 20px;
+    background-color:#278F3A; 
+    color: whitesmoke;
+    border-width: 3.5px;
+}
+
+.contact2{
+    width: 400px;
+    height: 480px;
+    margin: 100px;
+    background-color: #00000023;
+    border-radius: 20px;
+    margin-left: 200px;
+}
+
+.contact2 h1{
+    font-size: xx-large;
+    padding: 20px;
+
+}
+
+.contact2 h2{
+    font-size: x-large;
+    margin-left: 25px;
+    padding: 5px;
+}
+
+.contacts{
+    display: flex;
+    margin-left: 50px;
+}
+
+.questions{
+    width: 250px;
+    height: 45px;
+    font-size: larger;
+    margin-left: 80px;
+    margin-top: 50px;
+    border-radius: 20px;
+    background-color:#278F3A; 
+    color: whitesmoke;
+    border-width: 3.5px;
+}
+
+footer{
+    justify-self: center;
+    position: relative;
+    width: 1593px;
+    height: 150px;
+    margin: none;
+    background-color: lightgray;
+}
+
+.footerline{
+    background-color: #000000;
+    width: 1593px;
+    height: 2px;
+}
