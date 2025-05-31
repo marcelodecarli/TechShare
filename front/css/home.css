@@ -243,7 +243,7 @@ background-color: lightgray;
     margin: 100px;
     background-color: #00000023;
     border-radius: 20px;
-    margin-left: 200px;
+    margin-left: 150px;
 }
 
 .contact1 h1{
@@ -260,12 +260,12 @@ background-color: lightgray;
 
 .contact1 input{
     margin-left: 30px;
-    width: 325px;
+    width: 280px;
     height: 20px;
 }
 
 #subject{
-    height: 150px;
+    height: 110px;
     resize: vertical;
 }
 
@@ -273,7 +273,7 @@ background-color: lightgray;
     width: 100px;
     height: 45px;
     font-size: larger;
-    margin-left: 145px;
+    margin-left: 120px;
     margin-top: 25px;
     border-radius: 20px;
     background-color:#278F3A; 
@@ -287,13 +287,13 @@ background-color: lightgray;
     margin: 100px;
     background-color: #00000023;
     border-radius: 20px;
-    margin-left: 200px;
+    margin-left: 40px;
 }
 
 .contact2 h1{
     font-size: xx-large;
     padding: 20px;
-
+    
 }
 
 .contact2 h2{
@@ -304,15 +304,15 @@ background-color: lightgray;
 
 .contacts{
     display: flex;
-    margin-left: 50px;
+    margin-left: -100px;
 }
 
 .questions{
     width: 250px;
     height: 45px;
     font-size: larger;
-    margin-left: 80px;
-    margin-top: 50px;
+    margin-left: 60px;
+    margin-top: 10px;
     border-radius: 20px;
     background-color:#278F3A; 
     color: whitesmoke;
@@ -333,3 +333,36 @@ footer{
     width: 1593px;
     height: 2px;
 }
+
+#ifr{
+    margin-top: 10px;
+    display: flex;
+    width: 200px;
+    height: 170px; 
+    margin-left: 80px;
+    border-radius: 15px;
+    height: 70%;
+    width: 66%;
+    border: #000000 2px solid;
+    box-shadow: 5px 5px 10px;
+}
+
+.contact3{
+    width: 400px;
+    height: 480px;
+    margin: 100px;
+    background-color: #00000023;
+    border-radius: 20px;
+    margin-left: 100px;
+}
+
+.contact3 h1{
+    font-size: xx-large;
+    margin-left: 35px;
+    padding: 20px;
+}
+
+#ifr{
+    margin-left: 60px;
+}
+
