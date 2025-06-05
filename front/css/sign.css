@@ -1,0 +1,337 @@
+body{
+width: auto;
+height: auto;
+background-color: whitesmoke;
+}
+
+header{
+justify-self: center;
+position: relative;
+width: 1593px;
+height: 150px;
+margin: none;
+background-color: lightgray;
+}
+
+.Navegate{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;    
+}
+
+.Navegate ul{
+    padding-top: 40px;
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 50px;
+}
+
+.Navegate li a{
+    margin: 30px;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    text-decoration: none;  
+}
+
+#icon{
+  position: absolute;
+  top: 0;         
+  left: 50px;      
+  width: 130px;
+  height: 150px;
+}
+
+.signdivs{
+    display: flex;
+    justify-self: center;
+}
+
+.sign1{
+
+    width: 700px;
+    height: 810px;
+    margin: 100px;
+    background-color: #00000023;
+    border-radius: 20px;
+}
+
+.sign1 h1{
+    font-size: xx-large;
+    justify-self: center;
+    margin-top: 25px;
+    margin-right: 20px;
+}
+
+.sign1 h2{
+    font-size: x-large;
+    margin-left: 25px;
+    padding: 5px;
+}
+
+.sign1 input{
+    margin-left: 30px;
+    width: 325px;
+    height: 20px;
+}
+
+.type{
+    margin-left: 200px;
+}
+
+.fis{
+    margin-top: -32px;
+}
+
+.jur{
+    margin-top: -32px;
+}
+
+.email{
+    margin-top: 25px;
+    margin-right: 35px;
+    justify-self: center;
+}
+
+.send{
+    width: 80px;
+    height: 35px;
+    font-size: larger;
+    margin-left: 300px;
+    margin-top: 15px;
+    border-radius: 20px;
+    background-color:#278F3A; 
+    color: whitesmoke;
+    border-width: 2.5px;
+}
+
+.cad{
+    margin-bottom: 10px;
+}
+
+.contact2{
+    width: 400px;
+    height: 480px;
+    margin: 100px;
+    background-color: #00000023;
+    border-radius: 20px;
+    margin-left: 40px;
+}
+
+.contact2 h1{
+    font-size: xx-large;
+    padding: 20px;
+    
+}
+
+.contact2 h2{
+    font-size: x-large;
+    margin-left: 30px;
+    padding: 5px;
+}
+
+.contacts{
+    display: flex;
+    justify-self: center;
+}
+
+.questions{
+    width: 250px;
+    height: 45px;
+    font-size: larger;
+    margin-left: 60px;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color:#278F3A; 
+    color: whitesmoke;
+    border-width: 3.5px;
+}
+
+footer{
+    justify-self: center;
+    position: relative;
+    width: 1593px;
+    height: 150px;
+    margin: none;
+    background-color: lightgray;
+}
+
+.footerline{
+    background-color: #000000;
+    width: 1593px;
+    height: 2px;
+}
+
+#ifr{
+    margin-top: 10px;
+    display: flex;
+    width: 200px;
+    height: 170px; 
+    margin-left: 80px;
+    border-radius: 15px;
+    height: 70%;
+    width: 66%;
+    border: #000000 2px solid;
+    box-shadow: 5px 5px 10px;
+}
+
+.contact3{
+    width: 400px;
+    height: 480px;
+    margin: 100px;
+    background-color: #00000023;
+    border-radius: 20px;
+    margin-left: 100px;
+}
+
+.contact3 h1{
+    font-size: xx-large;
+    margin-left: 65px;
+    padding: 20px;
+}
+
+#ifr{
+    margin-left: 70px;
+}
+
+.search input {
+    margin-left: 1300px;
+    border: none;
+    border-bottom: 2px solid #278F3A;
+    border-radius: 0;
+    background: transparent;
+    padding: 10px 5px;
+    font-size: large;
+}
+
+.search{
+    margin-top: -95px;
+}
+
+.cadlog{
+    font-size: x-large;
+    position: absolute;
+    margin-left: 1290px;
+    margin-top: -130px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+}
+
+.login{
+    text-decoration: none;
+    margin: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.sign{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.divider{
+    width: 2px;
+    height: 20px;
+    background: #333;
+}
+
+@media (max-width: 1024px) {
+  header, footer {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  #icon {
+    position: static;
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .Navegate ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+    padding: 0;
+  }
+
+  .search {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search input {
+    margin: 0;
+    width: 80%;
+  }
+
+  .cadlog {
+    margin: 20px 0;
+    position: static;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .signdivs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sign1, .contact2, .contact3 {
+    width: 90%;
+    margin: 20px 0;
+  }
+
+  .send {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .contacts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #ifr {
+    width: 90%;
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .sign1 input,
+  .email input {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .type {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .contact2 h2, .contact3 h2 {
+    font-size: medium;
+  }
+
+  .send, .questions {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  h1, h2 {
+    text-align: center;
+  }
+}
