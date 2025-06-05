@@ -366,3 +366,134 @@ footer{
     margin-left: 60px;
 }
 
+@media (max-width: 1200px) {
+  header, .btn, footer, .footerline {
+    width: 100%;
+  }
+
+  .btn {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+    gap: 20px;
+  }
+
+  .recieve, .donate {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .cadlog {
+    position: static;
+    justify-content: center;
+    margin: 20px auto;
+    flex-wrap: wrap;
+  }
+
+  .Navegate ul {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    gap: 20px;
+  }
+
+  .search {
+    margin: 20px auto 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .donate-items {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .img1 {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .contacts {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .contact1, .contact2, .contact3 {
+    margin: 20px auto;
+  }
+
+  #ifr {
+    width: 90%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .carousel-wrapper {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .carousel-container {
+    width: 100%;
+  }
+
+  .carousel-item h1 {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    margin-top: 60px;
+  }
+
+  .img4 {
+    height: 250px;
+  }
+
+  .contact1 input, .contact2 input, #subject {
+    width: 80%;
+  }
+
+  .send, .questions {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .Navegate li a {
+    font-size: large;
+  }
+
+  .donate, .recieve {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item h1 {
+    font-size: 0.9rem;
+  }
+
+  .contact1 h1, .contact2 h1, .contact3 h1 {
+    font-size: large;
+    padding: 10px;
+  }
+
+  .contact1 h2, .contact2 h2 {
+    font-size: medium;
+  }
+
+  .login, .sign {
+    font-size: medium;
+  }
+
+  .btn {
+    gap: 10px;
+  }
+}
