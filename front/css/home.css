@@ -238,6 +238,7 @@ background-color: lightgray;
 }
 
 .contact1{
+    font-family: Arial, Helvetica, sans-serif;
     width: 400px;
     height: 480px;
     margin: 100px;
@@ -247,12 +248,14 @@ background-color: lightgray;
 }
 
 .contact1 h1{
+  font-family: Arial, Helvetica, sans-serif;
     font-size: xx-large;
     padding: 20px;
 
 }
 
 .contact1 h2{
+  font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
     margin-left: 25px;
     padding: 5px;
@@ -282,6 +285,7 @@ background-color: lightgray;
 }
 
 .contact2{
+  font-family: Arial, Helvetica, sans-serif;
     width: 400px;
     height: 480px;
     margin: 100px;
@@ -291,18 +295,21 @@ background-color: lightgray;
 }
 
 .contact2 h1{
+  font-family: Arial, Helvetica, sans-serif;
     font-size: xx-large;
     padding: 20px;
     
 }
 
 .contact2 h2{
+  font-family: Arial, Helvetica, sans-serif;
     font-size: x-large;
     margin-left: 25px;
     padding: 5px;
 }
 
 .contacts{
+  font-family: Arial, Helvetica, sans-serif;
     display: flex;
     margin-left: -100px;
 }
