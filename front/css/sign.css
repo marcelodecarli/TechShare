@@ -168,12 +168,18 @@ filter: invert(100%);
     width: 80px;
     height: 35px;
     font-size: larger;
-    margin-left: 300px;
-    margin-top: 15px;
+    justify-items: center;
     border-radius: 20px;
     background-color:#278F3A; 
     color: whitesmoke;
     border-width: 2.5px;
+}
+
+.btnsend{
+     display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 100px;
 }
 
 .contacts {
