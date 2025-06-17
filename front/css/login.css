@@ -207,9 +207,27 @@ filter: invert(100%);
 }
 
 .contact2 h2, .contact3 h2 {
-    font-size: 1.1rem;
-    margin-left: 15px;
+    font-size: 25px;
+    margin-left: 40px;
     padding: 5px 0;
+}
+
+.contact2 input{
+    margin-left: 40px;
+    width: 280px;
+}
+
+.send2{
+    margin-top: 20px;
+    margin-left: 125px;
+    width: 80px;
+    height: 35px;
+    font-size: larger;
+    justify-items: center;
+    border-radius: 20px;
+    background-color:#278F3A; 
+    color: whitesmoke;
+    border-width: 2.5px;
 }
 
 #ifr {
