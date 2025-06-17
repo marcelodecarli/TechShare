@@ -1,97 +1,166 @@
 body{
-width: auto;
-height: auto;
-background-color: whitesmoke;
+    background-color: rgb(202, 202, 202);
 }
-
 header{
-justify-self: center;
-position: relative;
-width: 1593px;
-height: 150px;
-margin: none;
-background-color: lightgray;
+    background-color: #bdbdbd;
+    
 }
 
-.Navegate{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;    
+.nav-link, .px-2{
+    text-decoration: none;
+    color:#000000;
+    transition: transform 0.8s ease;
 }
 
-.Navegate ul{
-    padding-top: 40px;
-    display: flex;
-    gap: 40px;
-    list-style: none;
-    margin: 50px;
+.nav-link:hover{
+    color:#196203;
+    transform: scale(1.3);
+    
+}
+.navheader{
+    margin-left: 10px;
+    gap: 25px;
 }
 
-.Navegate li a{
-    margin: 30px;
+
+.container-fluid{
+    height: 100%;
+    margin-top: 0;
+    padding: 0;
+    margin-left: 50px;
+}
+
+.navbar{
+    background-color: #0d63468a;
+}
+
+.nav-item a, .disabled{
+color: #000000;
+}
+.btn-warning{
+    background-color: #3b9a1e;
+    border: #196203;
+    font-weight: 500;
+}
+
+.btn-outline-light:hover{
+    box-shadow: 3px 3px 10px black;
+}
+
+.btn-warning:hover{
+    background-color: #44d812;
+    border: #0b2e00;
+    color: #000000;
+    font-weight: 500;
+    box-shadow: 3px 3px 10px black;
+}
+
+#imgHeader{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.carousel-item {
+    height: 80vh; /* Ajuste a altura conforme necessário */
+}
+
+/* Força a imagem a ocupar o espaço da div, mantendo a proporção */
+.carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; /* Mantém a imagem proporcional, preenchendo a div */
+
+    filter: invert(25%);
+    text-shadow: 2px 2px 3px #ffffff, -2px -2px 3px #ffffff;
+    background-color: #0000009b;
+}
+
+/* Centraliza o conteúdo no meio do slide */
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.display-1, .lead{
+    font-size: 5rem;
+    color:#000000;
+    padding: 10px;
+
+    border-radius: 15px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.lead{
+    font-size: 1.4rem;
+
+}
+
+.visually-hidden{
     color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: x-large;
-    text-decoration: none;  
+    background-color: black;
 }
 
-#icon{
-  position: absolute;
-  top: 0;         
-  left: 50px;      
-  width: 130px;
-  height: 150px;
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+filter: invert(100%);
+    
 }
 
-.signdivs{
-    display: flex;
-    justify-self: center;
+#navbarSupportedContent{
+    justify-content: end;
 }
 
-.sign1{
-    font-family: Arial, Helvetica, sans-serif;
-    width: 695px;
-    height: 810px;
-    margin: 100px;
-    background-color: #00000023;
-    border-radius: 20px;
+.container{
+    margin-top: 15px;
 }
 
-.sign1 h1{
-    font-size: xx-large;
-    justify-self: center;
-    margin-top: 25px;
-    margin-right: 20px;
+#carouselExample{
+    border-bottom: 5px solid rgba(0, 0, 0, 0.8);
+    border-top: 5px solid rgba(0, 0, 0, 0.8);
 }
 
-.sign1 h2{
-
-    font-size: x-large;
-    margin-left: 30px;
-    padding: 5px;
+.col-md-4 img{height: 200px;}
+#imgFooter{
+    width: 40px;
+    height: 50px;
 }
 
-.sign1 input{
-    margin-left: 60px;
-    width: 325px;
-    height: 20px;
+
+.card-text{
+    font-weight: 300;
+    font-size: 14px;
+    text-align: justify;
 }
 
-.type{
-    margin-left: 200px;
+.modal-body p{
+    font-weight: 300;
+    font-size: 16px;
+    text-align: justify;
 }
 
-.fis{
-    margin-top: -32px;
+
+.card-body {
+    padding: 30px;
 }
 
-.jur{
-    margin-top: -32px;
+.col-md-4{
+    margin-top: 20px;
+}
+
+
+.container{
+    border-top: solid 3px #0000003b;
+
+}
+.container footer{
+    height: 15vh;
+    align-items: center;
 }
 
 .email{
     margin-top: 25px;
-    margin-right: 35px;
     justify-self: center;
 }
 
@@ -107,38 +176,44 @@ background-color: lightgray;
     border-width: 2.5px;
 }
 
-.cad{
-    margin-bottom: 10px;
-}
-
-.contact2{
-    font-family: Arial, Helvetica, sans-serif;
-    width: 400px;
-    height: 480px;
-    margin: 100px;
-    background-color: #00000023;
-    border-radius: 20px;
-    margin-left: 40px;
-}
-
-.contact2 h1{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: xx-large;
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
     padding: 20px;
 }
 
-.contact2 h2{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: x-large;
-    margin-left: 30px;
-    padding: 5px;
+.contact2, .contact3 {
+    flex: 1 1 300px;
+    max-width: 400px;
+    min-width: 280px;
+    background-color: #00000023;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.contacts{ 
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-self: center;
+.contact2 h1, .contact3 h1 {
+    font-size: 1.8rem;
+    padding-bottom: 10px;
+    text-align: center;
 }
+
+.contact2 h2, .contact3 h2 {
+    font-size: 1.1rem;
+    margin-left: 15px;
+    padding: 5px 0;
+}
+
+#ifr {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    border: 2px solid #000;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
 
 .questions{
     width: 250px;
@@ -152,194 +227,82 @@ background-color: lightgray;
     border-width: 3.5px;
 }
 
-footer{
-    justify-self: center;
-    position: relative;
-    width: 1593px;
-    height: 150px;
-    margin: none;
-    background-color: lightgray;
+.cad{
+    margin-bottom: 10px;
 }
 
-.footerline{
-    background-color: #000000;
-    width: 1593px;
-    height: 2px;
-}
-
-#ifr{
-    margin-top: 10px;
+.signdivs{
     display: flex;
-    width: 200px;
-    height: 170px; 
-    margin-left: 80px;
-    border-radius: 15px;
-    height: 70%;
-    width: 66%;
-    border: #000000 2px solid;
-    box-shadow: 5px 5px 10px;
+    justify-self: center;
 }
 
-.contact3{
-    width: 400px;
-    height: 480px;
+.sign1{
+    width: 100%;
+    height: 100%;
     margin: 100px;
     background-color: #00000023;
     border-radius: 20px;
-    margin-left: 100px;
 }
 
-.contact3 h1{
+.sign1 h1{
     font-size: xx-large;
-    margin-left: 65px;
-    padding: 20px;
+    justify-self: center;
+    margin-top: 25px;
 }
 
-#ifr{
-    margin-left: 70px;
-}
-
-.search input {
-    margin-left: 1300px;
-    border: none;
-    border-bottom: 2px solid #278F3A;
-    border-radius: 0;
-    background: transparent;
-    padding: 10px 5px;
-    font-size: large;
-}
-
-.search{
-    margin-top: -95px;
-}
-
-.cadlog{
+.sign1 h2{
     font-size: x-large;
-    position: absolute;
-    margin-left: 1290px;
-    margin-top: -130px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 10px;
+    margin-left: 25px;
+    padding: 5px;
 }
 
-.login{
-    text-decoration: none;
-    margin: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-}
-
-.sign{
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    color: black;
-}
-
-.divider{
-    width: 2px;
+.sign1 input{
+    margin-left: 30px;
+    width: 325px;
     height: 20px;
-    background: #333;
 }
 
-.email h2{
-  margin-left: 55px;
+.type{
+    justify-self: center;
+    margin-left: 20%;
 }
 
-@media (max-width: 1024px) {
-  header, footer {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
+.type input{
+    margin-left: 75px;
+}
 
-  #icon {
-    position: static;
-    width: 100px;
-    height: auto;
-    margin-bottom: 10px;
-  }
+.fis{
+    margin-top: -37px;
+}
 
-  .Navegate ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    margin: 20px 0;
-    padding: 0;
-  }
+.jur{
+    margin-top: -37px;
+}
 
-  .search {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
+hr{
+    margin-right: 100px;
+}
 
-  .search input {
-    margin: 0;
-    width: 80%;
-  }
-
-  .cadlog {
-    margin: 20px 0;
-    position: static;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .signdivs {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sign1, .contact2, .contact3 {
-    width: 90%;
-    margin: 20px 0;
-  }
-
-  .send {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-
-  .contacts {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #ifr {
-    width: 90%;
-    height: 250px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.email input{
+    height: 30px;
 }
 
 @media (max-width: 600px) {
-  .sign1 input,
-  .email input {
-    width: 90%;
-    margin-left: 5%;
-  }
+    .contacts {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .type {
-    margin-left: 0;
-    text-align: center;
-  }
+    .contact2, .contact3 {
+        width: 90%;
+    }
 
-  .contact2 h2, .contact3 h2 {
-    font-size: medium;
-  }
+    #ifr {
+        height: 200px;
+    }
 
-  .send, .questions {
-    width: 90%;
-    margin: 10px auto;
-  }
-
-  h1, h2 {
-    text-align: center;
-  }
+    .questions {
+        width: 100%;
+        margin-left: 0;
+    }
 }
