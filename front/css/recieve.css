@@ -322,6 +322,23 @@ select:focus {
     justify-self: center;
 }
 
+.send{
+    width: 80px;
+    height: 35px;
+    font-size: larger;
+    justify-items: center;
+    border-radius: 20px;
+    background-color:#278F3A; 
+    color: whitesmoke;
+    border-width: 2.5px;
+}
+
+.btnsend{
+     display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 100px;
+}
 
 @media (max-width: 600px) {
     .contacts {
