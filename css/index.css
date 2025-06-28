@@ -1,90 +1,99 @@
-body{
+body {
     background-color: #010d17;
     color: white;
 }
 
-header{
+header {
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 10;
-    
 }
 
-.nav-link, .px-2{
+.nav-link,
+.px-2 {
     text-decoration: none;
-    color:white;
+    color: white;
     transition: transform 0.8s ease;
 }
 
-.nav-link:hover{
-    color:#00b0ec;
+.nav-link:hover {
+    color: #00b0ec;
     transform: scale(1.3);
-    
+
 }
-.navheader{
+
+.navheader {
     margin-left: 10px;
     gap: 25px;
 }
 
 
-.container-fluid{
+.container-fluid {
     height: 100%;
     margin-top: 0;
     padding: 0;
     margin-left: 50px;
 }
 
-.navbar{
+.navbar {
     background-color: #0d63468a;
 }
 
-.nav-item a, .disabled{
-color: white;
+.nav-item a,
+.disabled {
+    color: white;
 }
-.btn-warning{
+
+.btn-warning {
     background-color: #00b0ec;
     color: rgba(255, 255, 255, 0.879);
     border: none;
-    box-shadow: 0px 0px 10px rgba(0,176,236,255);
+    box-shadow: 0px 0px 10px rgba(0, 176, 236, 255);
     font-weight: 500;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: #00b0ec;
     color: rgba(255, 255, 255, 0.879);
     border: none;
-    box-shadow: 0px 0px 10px rgba(0,176,236,255);
+    box-shadow: 0px 0px 10px rgba(0, 176, 236, 255);
     font-weight: 500;
 }
 
-.btn-outline-light:hover{
+.btn-outline-light:hover {
     box-shadow: 3px 3px 10px black;
 }
 
-.btn-warning:hover{
+.btn-warning:hover {
     background-color: #46d1ff;
     box-shadow: 0px 0px 10px rgb(71, 209, 255);
     color: white;
-    
+
     font-weight: 500;
-   
+
 }
 
-header img{
+header img {
     height: 35px;
     width: 150px;
 }
 
+.carousel-item img {
+    filter: brightness(30%);
+}
+
 .carousel-item {
-    height: 80vh; /* Ajuste a altura conforme necessário */
+    height: 80vh;
+    /* Ajuste a altura conforme necessário */
 }
 
 /* Força a imagem a ocupar o espaço da div, mantendo a proporção */
 .carousel-item img {
     height: 100%;
     width: 100%;
-    object-fit: cover; /* Mantém a imagem proporcional, preenchendo a div */
+    object-fit: cover;
+    /* Mantém a imagem proporcional, preenchendo a div */
 
     /*filter: invert(25%);*/
     text-shadow: 2px 2px 3px #ffffff, -2px -2px 3px #ffffff;
@@ -97,9 +106,10 @@ header img{
     transform: translateY(-50%);
 }
 
-.display-1, .lead{
+.display-1,
+.lead {
     font-size: 3rem;
-    color:#ffffff;
+    color: #ffffff;
     padding: 10px;
 
     border-radius: 15px;
@@ -107,22 +117,22 @@ header img{
     font-weight: 600;
 }
 
-.lead{
+.lead {
     font-size: 1.4rem;
 
 }
 
-.visually-hidden{
+.visually-hidden {
     color: black;
     background-color: black;
 }
 
 
-#navbarSupportedContent{
+#navbarSupportedContent {
     justify-content: end;
 }
 
-.container{
+.container {
     margin-top: 15px;
 }
 
@@ -132,12 +142,12 @@ header img{
     display: flex;
     justify-content: center;
     gap: 5rem;
-    
-    
+
+
 }
 
 .information div {
-    
+
     text-align: center;
     color: rgba(255, 255, 255, 0.703);
     display: flex;
@@ -150,57 +160,96 @@ header img{
 
 
 
-.col-md-4 img{height: 200px;}
-#imgFooter{
+.col-md-4 img {
+    height: 200px;
+}
+
+#imgFooter {
     width: 100px;
-    height:35px;
+    height: 35px;
 }
 
 
-.card-text{
+.card-text {
     font-weight: 300;
     font-size: 14px;
     text-align: justify;
 }
 
-.modal-body p{
+.modal-body p {
     font-weight: 300;
     font-size: 16px;
-    text-align: justify;
 }
 
 
 .card-body {
     padding: 30px;
-    
 }
 
-.card{
+.card {
     background-color: rgba(27, 27, 27, 0);
     border: solid 1px #46d1ff;
     box-shadow: 0px 0px 10px rgba(71, 209, 255, 0.39);
     color: rgba(255, 255, 255, 0.703);
 }
 
-.col-md-4{
+.col-md-4 {
     margin-top: 20px;
 }
 
-
-
-.container footer{
-    height: 15vh;
-    align-items: center;
+footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-
-.carousel{
+.carousel {
     box-shadow: 0px 0px 50px rgb(0, 0, 0);
 }
 
-.ball{
-    aspect-ratio: 1 / 1; /* Garante que a altura seja igual à largura */
+.ball {
+    aspect-ratio: 1 / 1;
+    /* Garante que a altura seja igual à largura */
     border-radius: 50%;
     background-color: #46d1ff;
     box-shadow: 0px 0px 10px rgba(71, 209, 255, 0.39);
+}
+
+@media (max-width: 768px) {
+    /* --- Carrossel --- */
+
+    .carousel {
+        margin-top: 15rem;
+        /* ou 4rem, ajuste como quiser */
+    }
+
+    .carousel-item {
+        height: 50vh;
+    }
+
+    .display-1 {
+        font-size: 2rem;
+    }
+
+    /* --- Seção de informação com bolinhas --- */
+    .information {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .information div {
+        width: auto;
+    }
+
+    /* --- Cards de adoção (se aplicável) --- */
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards .card {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
 }
