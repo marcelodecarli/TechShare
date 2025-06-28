@@ -1,21 +1,23 @@
 body {
-    background-color: rgb(202, 202, 202);
+    background-color: #010d17;
+    color: white;
 }
 
 header {
-    background-color: #bdbdbd;
-
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .nav-link,
 .px-2 {
     text-decoration: none;
-    color: #000000;
+    color: white;
     transition: transform 0.8s ease;
 }
 
 .nav-link:hover {
-    color: #196203;
+    color: #00b0ec;
     transform: scale(1.3);
 
 }
@@ -43,7 +45,7 @@ header {
 }
 
 .btn-warning {
-    background-color: #3b9a1e;
+    background-color: #00b0ec;
     border: #196203;
     font-weight: 500;
 }
@@ -53,19 +55,22 @@ header {
 }
 
 .btn-warning:hover {
-    background-color: #44d812;
+    background-color: #46d1ff;
     border: #0b2e00;
     color: #000000;
     font-weight: 500;
     box-shadow: 3px 3px 10px black;
 }
 
-#imgHeader {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
+header img {
+    height: 35px;
+    width: 150px;
 }
 
+#imgFooter {
+    width: 100px;
+    height: 35px;
+}
 
 .display-1,
 .lead {
@@ -103,20 +108,9 @@ header {
     margin-top: 15px;
 }
 
-#carouselExample {
-    border-bottom: 5px solid rgba(0, 0, 0, 0.8);
-    border-top: 5px solid rgba(0, 0, 0, 0.8);
-}
-
 .col-md-4 img {
     height: 200px;
 }
-
-#imgFooter {
-    width: 40px;
-    height: 50px;
-}
-
 
 .card-text {
     font-weight: 300;
@@ -135,6 +129,13 @@ header {
     padding: 30px;
 }
 
+.card {
+    background-color: rgba(27, 27, 27, 0);
+    border: solid 1px #46d1ff;
+    box-shadow: 0px 0px 10px rgba(71, 209, 255, 0.39);
+    color: rgba(255, 255, 255, 0.703);
+}
+
 .col-md-4 {
     margin-top: 20px;
 }
@@ -151,6 +152,7 @@ header {
 }
 
 .contacts {
+    color: white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -160,6 +162,8 @@ header {
 
 .contact2,
 .contact3 {
+    border: 1px solid rgb(70, 209, 255);
+    box-shadow: rgba(71, 209, 255, 0.39) 0px 0px 10px;
     flex: 1 1 300px;
     max-width: 400px;
     min-width: 280px;
@@ -198,36 +202,92 @@ header {
     font-size: larger;
     margin-left: 60px;
     margin-top: 10px;
-    border-radius: 20px;
-    background-color: #278F3A;
-    color: whitesmoke;
-    border-width: 3.5px;
+    border-radius: 10px;
+    background-color: #00b0ec;
+    color: rgba(255, 255, 255, 0.703);
 }
 
 .cad {
     margin-bottom: 10px;
 }
 
-.cad h1{
+.cad h1 {
     justify-self: center;
+    color: rgba(255, 255, 255, 0.703);
 }
 
 .cad h3 {
+    color: rgba(255, 255, 255, 0.703);
     justify-self: center;
 }
 
-.divs{
-    display: flex;
-    justify-self: center;
+.divs {
+    width: 100%;
+  padding: 20px;
 }
 
 .div1 {
-    width: 700px;
-    height: 100%;
-    margin: 100px;
+    border: 1px solid rgb(70, 209, 255);
+    box-shadow: rgba(71, 209, 255, 0.39) 0px 0px 10px;
+    color: rgba(255, 255, 255, 0.703);
+    width: 100%;
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
     background-color: #00000023;
     border-radius: 20px;
 }
+
+.div1 h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.div1 label,
+.div1 select,
+.div1 input {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.upload-container h2 {
+    margin: 10px 0;
+}
+
+
+.city {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 600px;
+}
+
+.city h2 {
+    font-size: medium;
+}
+
+.form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto 20px auto;
+}
+
+.form-control {
+    width: 100%;
+    height: 48px;
+    padding: 10px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+
 
 .sign1 h1 {
     font-size: xx-large;
@@ -239,12 +299,6 @@ header {
     font-size: x-large;
     margin-left: 25px;
     padding: 5px;
-}
-
-.div1 input {
-    margin-left: 30px;
-    width: 325px;
-    height: 20px;
 }
 
 .email input {
@@ -264,21 +318,6 @@ select:focus {
     outline: none;
 }
 
-.city {
-    display: flex;
-    align-items: center;
-}
-
-.city input {
-    margin-left: 5px;
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    width: 300px;
-    height: 50%;
-}
-
 .upload-container {
     text-align: center;
     margin-top: 20px;
@@ -286,8 +325,10 @@ select:focus {
 
 .file-upload-label {
     display: inline-block;
-    background-color: #278F3A;
+    background-color: #00b0ec;
     color: white;
+    justify-self: center;
+    max-width: 400px;
     padding: 10px 20px;
     font-size: 1.2rem;
     border-radius: 5px;
@@ -296,7 +337,7 @@ select:focus {
 }
 
 .file-upload-label:hover {
-    background-color: #44d812;
+    background-color: #46d1ff;
 }
 
 #file-upload {
@@ -314,32 +355,28 @@ select:focus {
     background-size: cover;
 }
 
-.upload-container h2{
-    margin-right: 25px;
-}
 
-.mostdonateditems h1{
+.itemssearch h1 {
     justify-self: center;
+    color: white;
 }
 
-.send{
+.send {
     width: 80px;
     height: 35px;
     font-size: larger;
     justify-items: center;
-    border-radius: 20px;
-    background-color:#278F3A; 
+    border-radius: 10px;
+    background-color: #00b0ec;
     color: whitesmoke;
-    border-width: 2.5px;
 }
 
-.btnsend{
-     display: flex;
+.btnsend {
+    display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     height: 100px;
 }
-
 
 @media (max-width: 600px) {
     .contacts {
@@ -359,5 +396,34 @@ select:focus {
     .questions {
         width: 100%;
         margin-left: 0;
+    }
+
+    .div1 {
+        padding: 20px;
+    }
+
+    select,
+    input {
+        width: 100% !important;
+    }
+
+    .file-upload-label {
+        width: 100%;
+        text-align: center;
+    }
+
+    #preview {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+
+    .btnsend {
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .send {
+        width: 100%;
     }
 }
