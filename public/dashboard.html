@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - TaskApp</title>
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <script src="./js/dashboard.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Minhas Tarefas</h1>
+        <button class="logout-btn" onclick="logout()">Sair</button>
+    </header>
+
+    <div class="container">
+        <h2>Criar Tarefa</h2>
+        <form id="taskForm">
+            <input type="text" id="title" placeholder="Título" required />
+            <input type="text" id="description" placeholder="Descrição" required />
+            <select id="status">
+                <option value="pending">Pendente</option>
+                <option value="in-progress">Em progresso</option>
+                <option value="completed">Concluída</option>
+            </select>
+            <button type="submit">Adicionar</button>
+        </form>
+
+        <div class="task-list" id="taskList"></div>
+    </div>
+</body>
+
+</html>
