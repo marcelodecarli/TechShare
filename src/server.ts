@@ -6,48 +6,50 @@ import path from 'path';
 
 import { AppDataSource } from './config/data-source';
 import UserRoutes from './routes/user-routes';
-import TaskRoutes from './routes/task-routes';
+//import TaskRoutes from './routes/task-routes';
 
 dotenv.config();
 
 const app: Application = express();
-
 const PORT = process.env.PORT || 3000;
 
-// public folder
+// ✅ Servir arquivos estáticos (HTML, imagens etc.)
 app.use(express.static('public'));
 
-// Middleware
+// ✅ Middleware CORS com protocolo http
 app.use(cors({
-    origin: 'localhost:3000',
-    credentials: true
+    origin: 'http://localhost:3000', // Corrigido!
+    credentials: true // Permite envio de cookies e headers com autenticação
 }));
 
+// ✅ Middlewares padrões
 app.use(express.json());
-app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 
-// Middleware to log which route is being accessed
+// ✅ Middleware para log de requisições
 app.use((req: Request, res: Response, next: NextFunction) => {
     console.log(`Request Method: ${req.method}, Request URL: ${req.url}`);
     next();
 });
 
-// Routes
+// ✅ Página inicial (login.html)
 app.get('/', (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, '../public/login.html'));
 });
 
-app.use('/api', UserRoutes);
-app.use('/api', TaskRoutes);
+// ✅ Rotas da API
+app.use('/api', UserRoutes); // ex: /api/register, /api/login
+//app.use('/api', TaskRoutes); // ex: /api/tasks
 
-// Start the server
+// ✅ Inicializar conexão com banco e subir servidor
 AppDataSource.initialize()
     .then(() => {
+        console.log('✅ Banco de dados conectado com sucesso');
         app.listen(PORT, () => {
-            console.log(`Server is running on http://localhost:${PORT}`);
+            console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
         });
     })
     .catch((error) => {
-        console.error('Error during Data Source initialization:', error);
+        console.error('❌ Erro ao conectar no banco de dados:', error);
     });

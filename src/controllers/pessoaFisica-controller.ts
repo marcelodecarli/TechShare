@@ -24,18 +24,21 @@ export class PessoaFisicaController {
         const { email, senha } = req.body;
 
         if (!email || !senha) {
-            return res.status(400).json({ message: "Email e senha são obrigatórios" });
+             res.status(400).json({ message: "Email e senha são obrigatórios" });
+             return
         }
 
         try {
             const user = await this.pessoaFisicaRepo.findByEmail(email);
             if (!user) {
-                return res.status(401).json({ message: "Email ou senha inválidos" });
+                 res.status(401).json({ message: "Email ou senha inválidos" });
+                 return
             }
 
             const isPasswordValid = await bcrypt.compare(senha, user.senha);
             if (!isPasswordValid) {
-                return res.status(401).json({ message: "Email ou senha inválidos" });
+                 res.status(401).json({ message: "Email ou senha inválidos" });
+                 return
             }
 
             const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: "1h" });
@@ -45,11 +48,12 @@ export class PessoaFisicaController {
                 secure: true,
                 sameSite: "lax",
             });
-
-            return res.status(200).json({ message: "Login realizado com sucesso" });
+            res.status(200).json({ message: "Login realizado com sucesso" });
+            return 
 
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao realizar login", error });
+             res.status(500).json({ message: "Erro ao realizar login", error });
+             return
         }
     }
 
@@ -60,33 +64,40 @@ export class PessoaFisicaController {
             sameSite: "lax",
         });
 
-        return res.status(200).json({ message: "Logout realizado com sucesso" });
+         res.status(200).json({ message: "Logout realizado com sucesso" });
+         return
     }
 
     async getAllUsers(req: Request, res: Response) {
         try {
             const users = await this.pessoaFisicaRepo.findAll();
-            return res.status(200).json(users);
+             res.status(200).json(users);
+             return
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao buscar usuários", error });
+             res.status(500).json({ message: "Erro ao buscar usuários", error });
+             return
         }
     }
 
     async getUserById(req: Request, res: Response) {
         const userId = parseInt(req.params.id);
         if (isNaN(userId)) {
-            return res.status(400).json({ message: "ID inválido" });
+             res.status(400).json({ message: "ID inválido" });
+             return
         }
 
         try {
             const user = await this.pessoaFisicaRepo.findById(userId);
             if (!user) {
-                return res.status(404).json({ message: "Usuário não encontrado" });
+                 res.status(404).json({ message: "Usuário não encontrado" });
+                 return
             }
 
-            return res.status(200).json(user);
+             res.status(200).json(user);
+             return
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao buscar usuário", error });
+             res.status(500).json({ message: "Erro ao buscar usuário", error });
+             return
         }
     }
 
@@ -96,12 +107,15 @@ export class PessoaFisicaController {
         try {
             const user = await this.pessoaFisicaRepo.findByEmail(email);
             if (!user) {
-                return res.status(404).json({ message: "Usuário não encontrado" });
+                 res.status(404).json({ message: "Usuário não encontrado" });
+                 return
             }
 
-            return res.status(200).json(user);
+             res.status(200).json(user);
+             return
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao buscar usuário por email", error });
+             res.status(500).json({ message: "Erro ao buscar usuário por email", error });
+             return
         }
     }
 
@@ -109,23 +123,28 @@ export class PessoaFisicaController {
         const { email, nome, cpf, telefone, dataNascimento, senha } = req.body;
 
         if (!email || !nome || !cpf || !telefone || !dataNascimento || !senha) {
-            return res.status(400).json({ message: "Todos os campos são obrigatórios" });
+             res.status(400).json({ message: "Todos os campos são obrigatórios" });
+             return
         }
 
         try {
             const existingUser = await this.pessoaFisicaRepo.findByEmail(email);
             if (existingUser) {
-                return res.status(409).json({ message: "Usuário já existe" });
+                 res.status(409).json({ message: "Usuário já existe" });
+                 return
             }
 
             const hashedSenha = await bcrypt.hash(senha, 10);
             const newUser = new PessoaFisica(email, nome, cpf, telefone, new Date(dataNascimento), hashedSenha);
 
             const createdUser = await this.pessoaFisicaRepo.create(newUser);
-            return res.status(201).json(createdUser);
+             res.status(201).json(createdUser);
+             return
 
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao criar usuário", error });
+          console.error("Erro ao criar usuário:", error);
+             res.status(500).json({ message: "Erro ao criar usuário", error });
+             return
         }
     }
 
@@ -134,13 +153,15 @@ export class PessoaFisicaController {
         const updates = req.body;
 
         if (isNaN(userId)) {
-            return res.status(400).json({ message: "ID inválido" });
+             res.status(400).json({ message: "ID inválido" });
+             return
         }
 
         try {
             const existingUser = await this.pessoaFisicaRepo.findById(userId);
             if (!existingUser) {
-                return res.status(404).json({ message: "Usuário não encontrado" });
+                 res.status(404).json({ message: "Usuário não encontrado" });
+                 return
             }
 
             if (updates.senha) {
@@ -148,30 +169,36 @@ export class PessoaFisicaController {
             }
 
             const updatedUser = await this.pessoaFisicaRepo.updatePartial(userId, updates);
-            return res.status(200).json(updatedUser);
+             res.status(200).json(updatedUser);
+             return
 
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao atualizar usuário", error });
+             res.status(500).json({ message: "Erro ao atualizar usuário", error });
+             return
         }
     }
 
     async deleteUser(req: Request, res: Response) {
         const userId = parseInt(req.params.id);
         if (isNaN(userId)) {
-            return res.status(400).json({ message: "ID inválido" });
+             res.status(400).json({ message: "ID inválido" });
+             return
         }
 
         try {
             const existingUser = await this.pessoaFisicaRepo.findById(userId);
             if (!existingUser) {
-                return res.status(404).json({ message: "Usuário não encontrado" });
+                 res.status(404).json({ message: "Usuário não encontrado" });
+                 return
             }
 
             await this.pessoaFisicaRepo.delete(userId);
-            return res.status(204).send();
+             res.status(204).send();
+             return
 
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao deletar usuário", error });
+             res.status(500).json({ message: "Erro ao deletar usuário", error });
+             return
         }
     }
 }
