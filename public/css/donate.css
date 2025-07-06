@@ -362,16 +362,16 @@ select:focus {
 }
 
 .send {
-    width: 80px;
-    height: 35px;
-    font-size: larger;
-    justify-items: center;
-    border-radius: 10px;
+    border: none;
     background-color: #00b0ec;
-    color: whitesmoke;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.btnsend {
+.btn-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
