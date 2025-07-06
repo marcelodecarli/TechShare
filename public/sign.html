@@ -49,7 +49,7 @@
             <div class="div1">
                 <div class="cad">
                     <h1>Cadastrar</h1>
-                    <br>
+                  
 
                     <hr>
                     <div class="radio-group">
@@ -105,11 +105,25 @@
                     </div>
 
                 </div>
-                <div class="btn-wrapper">
-                    <button class="send" type="submit">Enviar</button>
+
+                <div class="form-group">
+                    <label for="city">
+                        <h2>Qual a sua Cidade?</h2>
+                    </label>
+                    <input type="text" id="city" name="city" class="form-control" placeholder="Digite sua cidade" />
+                    <div class="upload-container">
+                        <h2 class="escolar">Escolha uma foto de perfil:</h2>
+                        <label for="file-upload" class="file-upload-label">
+                            Escolher Imagem
+                            <input type="file" id="file-upload" name="image" accept="image/*">
+                        </label>
+                        <div id="preview"></div>
+                        <br>
+                        <div class="btnsend">
+                            <button href="./message.html" class="send">Enviar</button>
+                        </div>
+                    </div>
                 </div>
-                <br>
-            </div>
         </form>
     </div>
     <div class="contacts">
