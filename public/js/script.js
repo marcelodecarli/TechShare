@@ -60,4 +60,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // inicia
     updateCarousel();
+
+    /*
+    cria um evento que quando loga, dispara isso
+
+    btn.classList.toggle('hidden')
+    */
 });
