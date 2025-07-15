@@ -31,16 +31,29 @@
                     <li><a href="./donate.html" class="nav-link px-2 ">DOAR</a></li>
                     <li><a href="./receive.html" class="nav-link px-2 ">RECEBER</a></li>
                     <li><a href="./fordonation.html" class="nav-link px-2 ">ITENS PARA DOAÇÃO</a></li>
+                    <li><a href="./perfil.html" id="perfil" class="nav-link px-2 hidden">PERFIL</a></li>
+
                 </ul>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"> <input type="search"
                         class="form-control form-control-light text-bg-light" placeholder="Search" aria-label="Search">
                 </form>
                 <div class="text-end">
                     <a href="./login.html">
-                        <button type="button" class="btn btn-outline-light me-2 hidden">LOGIN</button>
+                        <button type="button" id="btnLogin" class="btn btn-outline-light me-2">
+                            LOGIN
+                        </button>
                     </a>
+
                     <a href="./sign.html">
-                        <button type="button" class="btn btn-warning hidden">CADASTRAR</button>
+                        <button type="button" id="btnCadastrar" class="btn btn-warning">
+                            CADASTRAR
+                        </button>
+                    </a>
+
+                    <a href="./login.html">
+                        <button type="button" id="btnSair" class="btn btn-warning hidden">
+                            SAIR
+                        </button>
                     </a>
                 </div>
 
@@ -68,7 +81,8 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./assets/pexels-anastasia-latunova-66354443-10251355.jpg" class="d-block w-100" alt="Segundo Slide">
+                <img src="./assets/pexels-anastasia-latunova-66354443-10251355.jpg" class="d-block w-100"
+                    alt="Segundo Slide">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center text-center">
                     <h5 class="display-1">O Brasil produz 2,4 milhões de toneladas de lixo eletrônico anualmente.</h5>
                     <p class="lead"></p>
@@ -274,6 +288,8 @@
 
     <script defer src="./js/script.js"></script>
     <script defer src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/ocultaCampos.js"></script>
+
 
 </body>
 

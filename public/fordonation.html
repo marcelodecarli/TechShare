@@ -31,16 +31,28 @@
                     <li><a href="./donate.html" class="nav-link px-2 ">DOAR</a></li>
                     <li><a href="./receive.html" class="nav-link px-2 ">RECEBER</a></li>
                     <li><a href="./fordonation.html" class="nav-link px-2 ">ITENS PARA DOAÇÃO</a></li>
+                    <li><a href="./perfil.html" id="perfil" class="nav-link px-2 hidden">PERFIL</a></li>
                 </ul>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"> <input type="search"
                         class="form-control form-control-light text-bg-light" placeholder="Search" aria-label="Search">
                 </form>
                 <div class="text-end">
                     <a href="./login.html">
-                        <button type="button" class="btn btn-outline-light me-2">LOGIN</button>
+                        <button type="button" id="btnLogin" class="btn btn-outline-light me-2">
+                            LOGIN
+                        </button>
                     </a>
+
                     <a href="./sign.html">
-                        <button type="button" class="btn btn-warning">CADASTRAR</button>
+                        <button type="button" id="btnCadastrar" class="btn btn-warning">
+                            CADASTRAR
+                        </button>
+                    </a>
+
+                    <a href="./login.html">
+                        <button type="button" id="btnSair" class="btn btn-warning hidden">
+                            SAIR
+                        </button>
                     </a>
                 </div>
 
@@ -100,7 +112,7 @@
 
     <div class="container">
         <h1 style="text-align: center; margin-top: 30px; color: rgba(255, 255, 255, 0.703);">Itens Disponíveis:</h1>
-        <div class="row">
+        <div class="row" id="itemsContainer">
             <!-- Card 1 -->
             <div class="col-md-4">
                 <div class="card h-100">
@@ -491,7 +503,8 @@
     </div>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./j/script.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/ocultaCampos.js"></script>
 
 </body>
 

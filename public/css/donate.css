@@ -378,6 +378,11 @@ select:focus {
     height: 100px;
 }
 
+.hidden {
+    display: none;
+}
+
+
 @media (max-width: 600px) {
     .contacts {
         flex-direction: column;

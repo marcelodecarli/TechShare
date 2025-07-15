@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/footers/">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="./bootstrap-5.3.3-examples.zip" rel="stylesheet">
@@ -10,15 +8,12 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/perfil.css">
 
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechShare</title>
-
+    <title>TechShare - Perfil</title>
 </head>
 
 <body>
-
     <header class="p-3">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -31,123 +26,196 @@
                     <li><a href="./donate.html" class="nav-link px-2 ">DOAR</a></li>
                     <li><a href="./receive.html" class="nav-link px-2 ">RECEBER</a></li>
                     <li><a href="./fordonation.html" class="nav-link px-2 ">ITENS PARA DOAÇÃO</a></li>
+                    <li><a href="./perfil.html" id="perfil" class="nav-link px-2">PERFIL</a></li>
                 </ul>
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"> <input type="search"
-                        class="form-control form-control-light text-bg-light" placeholder="Search" aria-label="Search">
-                </form>
-                <div class="text-end"> <button type="button" class="btn btn-outline-light me-2">LOGIN</button> <button
-                        type="button" class="btn btn-warning">CADASTRAR</button> </div>
+                
+                <div class="text-end">
+                    <button type="button" id="btnSair" class="btn btn-warning">
+                        SAIR
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
-    </div>
-    </div>
-    <div class="divs">
-        <div class="div1">
-            <div class="cad">
-                <h1>Perfil do Usuário</h1>
-                <div class="wrapper">
-                    <img src="./assets/perfil.png" class="perfil" />
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">Perfil do Usuário</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <img src="./assets/perfil.png" class="rounded-circle profile-img" width="150" height="150">
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <h5>Nome Completo:</h5>
+                                <p id="userName" class="text-muted">Carregando...</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Email:</h5>
+                                <p id="userEmail" class="text-muted">Carregando...</p>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <h5>Telefone:</h5>
+                                <p id="userPhone" class="text-muted">Carregando...</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Data de Nascimento:</h5>
+                                <p id="userBirthDate" class="text-muted">Carregando...</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="button" id="btnEditProfile" class="btn btn-primary">
+                                <i class="bi bi-pencil-fill"></i> Editar Perfil
+                            </button>
+                            <button type="button" id="btnDeleteAccount" class="btn btn-danger">
+                                <i class="bi bi-trash-fill"></i> Excluir Conta
+                            </button>
+                        </div>
+
+                        <div id="editForm" class="mt-4 hidden">
+                            <hr>
+                            <h4 class="mb-3">Editar Perfil</h4>
+                            <form id="profileForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="editName" class="form-label">Nome Completo</label>
+                                        <input type="text" class="form-control" id="editName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="editEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="editEmail" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="editPhone" class="form-label">Telefone</label>
+                                        <input type="text" class="form-control" id="editPhone" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="editBirthDate" class="form-label">Data de Nascimento</label>
+                                        <input type="date" class="form-control" id="editBirthDate" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="editPassword" class="form-label">Nova Senha (deixe em branco para não alterar)</label>
+                                    <input type="password" class="form-control" id="editPassword">
+                                </div>
+                                <div class="d-flex justify-content-end gap-2">
+                                    <button type="button" id="btnCancelEdit" class="btn btn-secondary">
+                                        Cancelar
+                                    </button>
+                                    <button type="submit" class="btn btn-success">
+                                        Salvar Alterações
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <br>
-                    <h3>Nome Completo:</h3>
-                    <p>João Pedro da Silva Costa</p>
-                    <h3>Email:</h3>
-                    <p>joaopedrodasilva75@gmail.com</p>
-                    <h3>Telefone:</h3>
-                    <p> 55 51 99999-9999</p>
-                    <h3>Estado:</h3>
-                    <p>Minas Gerais</p>
-                    <h3>Cidade:</h3>
-                    <p>Ouro preto</p>
-                    <h3>Itens Disponíveis:</h3>
-                    <div class="itemsD">
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <img src="./assets/melhores-celulares.jpg" class="card-img-top" alt="Imagem Card 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Smartphone</h5>
-                                <p class="card-text">Celular show de bola.</p>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#card2Modal">
-                                    Excluir
-                                </button>
+
+                <div class="card shadow mt-4">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">Meus Itens</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs" id="myItemsTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="available-tab" data-bs-toggle="tab" data-bs-target="#available" type="button" role="tab">Disponíveis</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="donated-tab" data-bs-toggle="tab" data-bs-target="#donated" type="button" role="tab">Doados</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content mt-3" id="myItemsTabContent">
+                            <div class="tab-pane fade show active" id="available" role="tabpanel">
+                                <div class="row" id="availableItems">
+                                    <!-- Itens disponíveis serão carregados aqui -->
+                                    <div class="col-12 text-center py-4">
+                                        <p class="text-muted">Nenhum item disponível no momento.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="donated" role="tabpanel">
+                                <div class="row" id="donatedItems">
+                                    <!-- Itens doados serão carregados aqui -->
+                                    <div class="col-12 text-center py-4">
+                                        <p class="text-muted">Nenhum item doado ainda.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <img src="./assets/melhores-celulares.jpg" class="card-img-top" alt="Imagem Card 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Smartphone</h5>
-                                <p class="card-text">Celular show de bola.</p>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#card2Modal">
-                                    Excluir
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    <h3>Itens Doados:</h3>
                 </div>
             </div>
-            <br>
         </div>
     </div>
-    <div class="contacts">
-        <div class="contact2">
-            <h1>Nosso Contato</h1>
-            <h2>Rua: Rua José bonifácio, 555</h2>
-            <h2>Bairro: Centro</h2>
-            <h2>Cidade: São Leopoldo/RS, Brasil</h2>
-            <h2>CEP: 93000-500</h2>
-            <h2>Email: contato@techshare.com</h2>
-            <h2>Contato: (51)3030-3030</h2>
-            <button href="" class="questions">Perguntas Frequentes</button>
+
+    <!-- Modal de Confirmação de Exclusão -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Exclusão</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza que deseja excluir sua conta permanentemente? Esta ação não pode ser desfeita.</p>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Digite sua senha para confirmar:</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                        <div class="invalid-feedback" id="passwordError">
+                            Senha incorreta
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btnConfirmDelete" class="btn btn-danger">Excluir Conta</button>
+                </div>
+            </div>
         </div>
-        <div class="contact3">
-            <h1>Nossa Localização</h1>
-            <iframe id="ifr"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d46586.94526089325!2d-51.14945589351733!3d-29.78933801405499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1748648219695!5m2!1spt-BR!2sbr"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>TechShare</h5>
+                    <p>Conectando pessoas através da tecnologia.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="./index.html" class="text-white">Home</a></li>
+                        <li><a href="./donate.html" class="text-white">Doar</a></li>
+                        <li><a href="./receive.html" class="text-white">Receber</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contato</h5>
+                    <ul class="list-unstyled">
+                        <li>contato@techshare.com</li>
+                        <li>(51) 3030-3030</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 TechShare. Todos os direitos reservados.</p>
+            </div>
         </div>
-    </div>
-    </div>
-    </main>
-    <script src="./js/sign.js"></script>
-    <div class="footerline"></div>
+    </footer>
 
-    <div class="container">
-
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-            <p class="col-md-4 mb-0 text-body-secondary" style="color: var(--bs-heading-color) !important;">© TechShare,
-                Todos os direitos Reservados.</p>
-            <a href="./index.html" target="_blank"
-                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-
-                <img id="imgFooter" src="./assets/newlogo.jfif" class="bi me-2" width="40" height="40" alt="">
-
-            </a>
-
-
-            <ul class="nav col-md-4 justify-content-end">
-                <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-body-secondary"
-                        style="color: var(--bs-heading-color) !important;">HOME</a></li>
-                <li class="nav-item"><a href="./" class="nav-link px-2 text-body-secondary"
-                        style="color: var(--bs-heading-color) !important;">FAQs</a></li>
-                <!-- <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li> -->
-            </ul>
-        </footer>
-    </div>
-
-
-    <script defer src="./js/receive.js"></script>
-    <script defer src="./js/bootstrap.bundle.min.js"></script>
-
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/perfil.js" type="module"></script>
 </body>
-
 </html>

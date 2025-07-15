@@ -31,13 +31,30 @@
                     <li><a href="./donate.html" class="nav-link px-2 ">DOAR</a></li>
                     <li><a href="./receive.html" class="nav-link px-2 ">RECEBER</a></li>
                     <li><a href="./fordonation.html" class="nav-link px-2 ">ITENS PARA DOAÇÃO</a></li>
+                    <li><a href="./perfil.html" id="perfil" class="nav-link px-2 hidden">PERFIL</a></li>
                 </ul>
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"> <input type="search"
                         class="form-control form-control-light text-bg-light" placeholder="Search" aria-label="Search">
                 </form>
-                <div class="text-end"> <a href="./login.html"><button type="button"
-                            class="btn btn-outline-light me-2">LOGIN</button></a> <button type="button"
-                        class="btn btn-warning">CADASTRAR</button> </div>
+                <div class="text-end">
+                    <a href="./login.html">
+                        <button type="button" id="btnLogin" class="btn btn-outline-light me-2">
+                            LOGIN
+                        </button>
+                    </a>
+
+                    <a href="./sign.html">
+                        <button type="button" id="btnCadastrar" class="btn btn-warning">
+                            CADASTRAR
+                        </button>
+                    </a>
+
+                    <a href="./login.html">
+                        <button type="button" id="btnSair" class="btn btn-warning hidden">
+                            SAIR
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -49,7 +66,7 @@
             <div class="div1">
                 <div class="cad">
                     <h1>Cadastrar</h1>
-                  
+
 
                     <hr>
                     <div class="radio-group">
@@ -176,6 +193,9 @@
 
     <script defer src="./js/receive.js"></script>
     <script defer src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/ocultaCampos.js"></script>
+
 
 </body>
+
 </html>

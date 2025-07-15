@@ -388,6 +388,10 @@ select:focus {
     gap: 20px;
 }
 
+.hidden {
+    display: none;
+}
+
 @media (max-width: 600px) {
     .contacts {
         flex-direction: column;
@@ -447,4 +451,123 @@ select:focus {
   .div1 {
     padding: 15px;
   }
+}
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --danger-color: #dc3545;
+    --success-color: #198754;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.profile-img {
+    border: 5px solid var(--primary-color);
+    object-fit: cover;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    font-weight: 600;
+}
+
+.nav-tabs .nav-link {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.btn {
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.form-control {
+    border-radius: 6px;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.invalid-feedback {
+    display: none;
+    color: var(--danger-color);
+    font-size: 0.875em;
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+footer a {
+    color: var(--light-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #adb5bd;
+}
+
+@media (max-width: 768px) {
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.875rem;
+    }
 }

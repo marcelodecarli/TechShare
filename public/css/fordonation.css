@@ -217,6 +217,51 @@ footer {
     background-color: #46d1ff;
     box-shadow: 0px 0px 10px rgba(71, 209, 255, 0.39);
 }
+.hidden {
+    display: none;
+}
+
+/* Estilo para o preview da imagem no formulário */
+#preview {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: none; /* Inicialmente oculto */
+}
+
+/* Estilo para os cards */
+.card {
+    transition: transform 0.3s;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    background-color: #010d17;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #3caed4;
+    border-color: #3caed4;
+}
+
+.btn-primary:hover {
+    background-color: #2a8db0;
+    border-color: #2a8db0;
+}
 
 @media (max-width: 768px) {
     /* --- Carrossel --- */
