@@ -13,53 +13,77 @@ if (!JWT_SECRET) {
 declare global {
     namespace Express {
         interface Request {
-            user?: string | jwt.JwtPayload;
+            user?: {
+                id: number;
+                email: string;
+                [key: string]: any;
+            };
         }
     }
 }
 
 export function authenticateToken(req: Request, res: Response, next: NextFunction) {
-    // 1. Log para verificar os cookies recebidos
-    console.log('[AUTH] Cookies recebidos:', req.cookies);
-    
-    const token = req.cookies.token; // lê do cookie
-
-    // 2. Log para verificar o token extraído
-    console.log('[AUTH] Token extraído:', token || 'Nenhum token encontrado');
+    const token = req.cookies.token;
 
     if (!token) {
-        console.log('[AUTH] Erro: Nenhum token fornecido');
-        res.status(401).json({ message: "Unauthorized" });
-        return;
+        console.log('[AUTH] Tentativa de acesso sem token', {
+            ip: req.ip,
+            path: req.path,
+            method: req.method
+        });
+         res.status(401).json({ 
+            success: false,
+            error: "Token de autenticação necessário" 
+        });
+        return
     }
 
-    jwt.verify(token, JWT_SECRET, (err: jwt.VerifyErrors | null, decoded: jwt.JwtPayload | string | undefined) => {
-        // 3. Log para erros de verificação
+    jwt.verify(token, JWT_SECRET, (err: jwt.VerifyErrors | null, decoded: any) => {
         if (err) {
-            console.error('[AUTH] Erro na verificação do token:', err.message);
-            
-            // 4. Log antes de limpar o cookie inválido
-            console.log('[AUTH] Limpando cookie inválido...');
-            
-            res.clearCookie("token", {
-                httpOnly: true,
-                secure: process.env.NODE_ENV === "production",
-                sameSite: "none"
+            console.error('[AUTH] Token inválido:', {
+                error: err.name,
+                message: err.message,
+                ip: req.ip
             });
             
-            res.status(403).json({ message: "Invalid or expired token" });
-            return;
+            clearAuthCookie(res);
+            
+             res.status(403).json({ 
+                success: false,
+                error: "Token inválido ou expirado" 
+            });
+            return
         }
 
-        // 5. Log para token válido
-        console.log('[AUTH] Token válido. Usuário decodificado:', decoded);
-        
-        // Adiciona o usuário decodificado à requisição
-        req.user = decoded;
+        // Adiciona informações do usuário à requisição
+        req.user = {
+            id: decoded.id,
+            email: decoded.email
+        };
 
-        // 6. Log antes de chamar o próximo middleware
-        console.log('[AUTH] Chamando próximo middleware...');
-        
+        console.log('[AUTH] Acesso autorizado:', {
+            userId: decoded.id,
+            ip: req.ip,
+            path: req.path
+        });
+
         next();
+    });
+}
+
+export function clearAuthCookie(res: Response) {
+    res.clearCookie("token", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax"
+    });
+}
+
+export function setAuthCookie(res: Response, token: string) {
+    res.cookie("token", token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        maxAge: 3600000 // 1 hora
     });
 }

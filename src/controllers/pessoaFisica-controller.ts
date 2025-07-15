@@ -201,4 +201,35 @@ export class PessoaFisicaController {
              return
         }
     }
+    async getCurrentUser(req: Request, res: Response) {
+    try {
+        // O middleware authenticateToken já adicionou o usuário à requisição
+        if (!req.user) {
+            res.status(401).json({ message: "Não autenticado" });
+            return;
+        }
+
+        const userId = typeof req.user === 'object' ? (req.user as any).id : null;
+        if (!userId) {
+            res.status(401).json({ message: "ID de usuário inválido" });
+            return;
+        }
+
+        const user = await this.pessoaFisicaRepo.findById(userId);
+        if (!user) {
+            res.status(404).json({ message: "Usuário não encontrado" });
+            return;
+        }
+
+        // Remove a senha antes de enviar a resposta
+        const { senha, ...userWithoutPassword } = user;
+        res.status(200).json(userWithoutPassword);
+        return;
+
+    } catch (error) {
+        console.error('Erro ao buscar usuário atual:', error);
+        res.status(500).json({ message: "Erro ao buscar usuário", error });
+        return;
+    }
+}
 }

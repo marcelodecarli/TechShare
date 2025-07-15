@@ -9,7 +9,7 @@ const router = Router();
 router.post("/login", pessoaFisicaController.login.bind(pessoaFisicaController)); // Login route
 router.post("/logout", pessoaFisicaController.logout.bind(pessoaFisicaController)); // Logout route
 router.post("/register", pessoaFisicaController.createUser.bind(pessoaFisicaController)); // Register route
-
+router.get("/users/me", authenticateToken, pessoaFisicaController.getCurrentUser.bind(pessoaFisicaController));
 router.get("/users", authenticateToken, pessoaFisicaController.getAllUsers.bind(pessoaFisicaController)); // Get all users route
 router.get("/users/:id", authenticateToken, pessoaFisicaController.getUserById.bind(pessoaFisicaController)); // Get user by ID route
 router.get("/users/email/:email", authenticateToken, pessoaFisicaController.getUserByEmail.bind(pessoaFisicaController)); // Get user by email route

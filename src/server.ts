@@ -6,13 +6,14 @@ import path from 'path';
 
 import { AppDataSource } from './config/data-source';
 import UserRoutes from './routes/user-routes';
-//import TaskRoutes from './routes/task-routes';
+import PedidoRoutes from './routes/pedido-doacao-routes';
+
 
 dotenv.config();
 
 const app: Application = express();
 const PORT = process.env.PORT || 3000;
-
+app.use('/api', PedidoRoutes); 
 // ✅ Servir arquivos estáticos (HTML, imagens etc.)
 app.use(express.static('public'));
 

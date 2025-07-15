@@ -14,7 +14,8 @@ export class PedidoDoacaoController {
         const comprovanteEscolar = req.file?.filename; // se estiver usando multer
 
         if (!tipoEletronico || !nivelNecessidade || !estado || !cidade) {
-            return res.status(400).json({ message: "Todos os campos obrigatórios devem ser preenchidos" });
+            res.status(400).json({ message: "Todos os campos obrigatórios devem ser preenchidos" });
+            return;
         }
 
         try {
@@ -27,18 +28,22 @@ export class PedidoDoacaoController {
             );
 
             const pedidoCriado = await this.pedidoRepo.create(novoPedido);
-            return res.status(201).json(pedidoCriado);
+            res.status(201).json(pedidoCriado);
+            return;
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao criar pedido", error });
+            res.status(500).json({ message: "Erro ao criar pedido", error });
+            return;
         }
     }
 
     async getAll(req: Request, res: Response) {
         try {
             const pedidos = await this.pedidoRepo.findAll();
-            return res.status(200).json(pedidos);
+            res.status(200).json(pedidos);
+            return;
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao buscar pedidos", error });
+            res.status(500).json({ message: "Erro ao buscar pedidos", error });
+            return;
         }
     }
 
@@ -46,18 +51,22 @@ export class PedidoDoacaoController {
         const id = parseInt(req.params.id);
 
         if (isNaN(id)) {
-            return res.status(400).json({ message: "ID inválido" });
+            res.status(400).json({ message: "ID inválido" });
+            return;
         }
 
         try {
             const pedido = await this.pedidoRepo.findById(id);
             if (!pedido) {
-                return res.status(404).json({ message: "Pedido não encontrado" });
+                res.status(404).json({ message: "Pedido não encontrado" });
+                return;
             }
 
-            return res.status(200).json(pedido);
+            res.status(200).json(pedido);
+            return;
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao buscar pedido", error });
+            res.status(500).json({ message: "Erro ao buscar pedido", error });
+            return;
         }
     }
 
@@ -66,14 +75,17 @@ export class PedidoDoacaoController {
         const updates = req.body;
 
         if (isNaN(id)) {
-            return res.status(400).json({ message: "ID inválido" });
+            res.status(400).json({ message: "ID inválido" });
+            return;
         }
 
         try {
             const pedidoAtualizado = await this.pedidoRepo.updatePartial(id, updates);
-            return res.status(200).json(pedidoAtualizado);
+            res.status(200).json(pedidoAtualizado);
+            return;
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao atualizar pedido", error });
+            res.status(500).json({ message: "Erro ao atualizar pedido", error });
+            return;
         }
     }
 
@@ -81,14 +93,42 @@ export class PedidoDoacaoController {
         const id = parseInt(req.params.id);
 
         if (isNaN(id)) {
-            return res.status(400).json({ message: "ID inválido" });
+            res.status(400).json({ message: "ID inválido" });
+            return;
         }
 
         try {
             await this.pedidoRepo.delete(id);
-            return res.status(204).send();
+            res.status(204).send();
+            return;
         } catch (error) {
-            return res.status(500).json({ message: "Erro ao deletar pedido", error });
+            res.status(500).json({ message: "Erro ao deletar pedido", error });
+            return;
+        }
+    }
+
+    async getCurrentUser(req: Request, res: Response) {
+        try {
+            // O middleware authenticateToken já adicionou o usuário à requisição
+            if (!req.user) {
+                res.status(401).json({ message: "Não autenticado" });
+                return;
+            }
+
+            // Retorna apenas os dados básicos do usuário que já estão no token
+            const userData = {
+                id: req.user.id,
+                email: req.user.email
+                // Adicione outros campos que estão no token se necessário
+            };
+
+            res.status(200).json(userData);
+            return;
+
+        } catch (error) {
+            console.error('Erro ao buscar usuário atual:', error);
+            res.status(500).json({ message: "Erro ao buscar usuário", error });
+            return;
         }
     }
 }
