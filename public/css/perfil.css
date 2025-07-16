@@ -1,5 +1,5 @@
 body {
-    background-color: #010d17;
+    background-color: #000;
     color: white;
 }
 
@@ -462,6 +462,12 @@ select:focus {
     --dark-color: #212529;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
 .hidden {
     display: none !important;
 }
@@ -548,10 +554,6 @@ footer a {
 
 footer a:hover {
     color: #adb5bd;
-}
-
-.text-muted {
-    color: rgb(226, 226, 226) !important;
 }
 
 @media (max-width: 768px) {
